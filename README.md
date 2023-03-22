@@ -1,6 +1,10 @@
 # RestApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0. This project has the following features:
+1. Majorly CRUD operations, Adding restaurant details, Editing and Deleting records.
+2. Basic Signup and Login
+3. Uses json-server as backend 
+
 
 ## Development server
 

@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 10,
+      "name": "Frankies",
+      "email": "Test@gmail.com",
+      "mobile": "9090",
+      "address": "Porvorim",
+      "services": "Icecream Parlour"
+    },
+    {
+      "id": 11,
+      "name": "Fillus Fish & Chips",
+      "email": "fillus",
+      "mobile": "9999",
+      "address": "Candolim",
+      "services": "Resto & Bar"
+    }
+  ],
+  "signup": [
+    {
+      "name": "samikshya",
+      "email": "samy@gmail.com",
+      "mobile": "9999999999",
+      "password": "rerefdfdf",
+      "id": 1
+    },
+    {
+      "name": "NewUser",
+      "email": "newuser@gmail.com",
+      "mobile": "89999",
+      "password": "newuser",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

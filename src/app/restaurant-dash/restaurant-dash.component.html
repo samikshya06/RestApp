@@ -1,0 +1,99 @@
+<nav class="navbar navbar-light bg-primary">
+<div class="container-fluid">
+    <h2>Restaurant Record App</h2>
+    <div class="d-flex">
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="clickAddResto()">
+          Add Restaurant
+        </button>
+
+        <button routerLink = "/login" type="button" class="btn btn-danger mx-3">
+ Logout
+        </button>
+    </div>
+</div>
+</nav>
+<!-- JumboTron-->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Restaurant Records Management</h1>
+      <p class="lead">You can save records of Restaurants using Angular 15</p>
+      <a class="btn btn-primary" target="_blank" type ="button" href="http://www.youtube.com">Samy</a>
+    </div>
+  </div>
+<!--Jumbotron closed-->
+<!--Table Shown here-->
+<table class = "table mt-4">
+    <thead>
+        <tr>
+            <th scope="col">Restaurant ID</th>
+            <th scope="col">Restaurant Name</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Address</th>
+            <th scope="col">Email</th>
+            <th scope="col">Services</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allRespData">
+       <td>{{data.id}}</td>
+       <td>{{data.name}}</td>
+       <td>{{data.mobile}}</td>
+       <td>{{data.address}}</td>
+       <td>{{data.email}}</td>
+       <td>{{data.services}}</td>
+            <td>
+                <button class="btn btn-warning"(click)="onEdit(data)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>&nbsp;
+                <button class="btn btn-danger" (click)="deleteRest(data.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup] = "formValue">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Name</label>
+              <input type="text" formControlName="name" class="form-control" placeholder="Restaurant Name here" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label  class="form-label">Email Id</label>
+              <input type="email" formControlName="email"class="form-control" id="exampleInputEmail1" placeholder="sample@gmail.com" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Mobile</label>
+              <input type="text" formControlName="mobile" class="form-control" placeholder="+91 .." >
+              
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Address</label>
+              <input type="text" formControlName="address" class="form-control" placeholder="ex: New York City" >
+             
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Services</label>
+              <input type="text" formControlName="services" class="form-control" placeholder="ex: Tea & Coffee">
+          
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" [hidden]="!showAdd" (click)="addRestaurant()">Add Details</button>
+          <button type="button" class="btn btn-primary" [hidden]="!showBtn" (click)="updateRest()">Update Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
